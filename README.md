@@ -31,4 +31,3 @@ These API is built on the following technologies:
 - Express.js
 - MongoDB
 
-For detailed documentation on request/response structures, validation, and error handling, please refer to the full OpenAPI specification.

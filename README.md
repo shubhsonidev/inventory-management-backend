@@ -1,53 +1,34 @@
-# Product Management API
+# Inventory Management API
 
-This project is an API for managing users, categories, and products. It includes endpoints for user signup, signin, logout, and category and product CRUD operations.
+This backend is created for inventory management it facilitates user, product and category management.
 
-## API Documentation
+## User Management
 
-The API documentation is generated using Swagger. Below are the available endpoints and their descriptions.
+- POST /api/user/signup: Create a new user account.
+- POST /api/user/signin: Authenticate and log in an existing user.
+- GET /api/user/logout: Log out the current user.
 
-### User Management
+## Category Management
 
-#### User Signup
+- POST /api/category/add: Add a new category.
+- GET /api/category: Retrieve all categories.
+- GET /api/category/{id}: Get details of a specific category by ID.
+- PUT /api/category/{id}: Update a category by ID.
+- DELETE /api/category/{id}: Delete a category by ID.
 
-```swagger
-/**
- * @swagger
- * tags:
- *   name: User
- *   description: User management
- */
+## Product Management
 
-/**
- * @swagger
- * /api/user/signup:
- *   post:
- *     summary: User signup
- *     tags: [User]
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               fullName:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *               mobileNumber:
- *                 type: string
- *               profileImageURL:
- *                 type: base64 string
- *     responses:
- *       201:
- *         description: User created successfull
- *       400:
- *         description: Validation errors
- *       500:
- *         description: Internal server error
- *       501:
- *         description: File upload error occured
- */
+- POST /api/product/add: Add a new product.
+- GET /api/product: Retrieve all products.
+- GET /api/product/{id}: Get details of a specific product by ID.
+- PUT /api/product/{id}: Update a product by ID.
+- DELETE /api/product/{id}: Delete a product by ID.
+- PUT /api/product/quantity/{id}: Update the quantity of a product by ID.
+
+These API is built on the following technologies:
+
+- Node.js
+- Express.js
+- MongoDB
+
+For detailed documentation on request/response structures, validation, and error handling, please refer to the full OpenAPI specification.

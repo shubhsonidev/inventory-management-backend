@@ -47,9 +47,9 @@ async function handleUserSignup(req, res) {
           },
         });
       } catch (error) {
-        return res.status(500).json({
+        return res.status(501).json({
           success: false,
-          message: "File upload error occured: internal server error",
+          message: "File upload error occured",
         });
       }
     }

@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const { checkForAuthenticationCookie } = require("./middlewares/authentication");
 const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./swagger");
+const basicAuth = require("express-basic-auth");
 const app = express();
 
 const port = process.env.PORT || 4200;
@@ -26,7 +27,15 @@ app.use("/api/product", productRouter);
 
 app.use("/api/category", categoryRouter);
 
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use(
+  "/api-docs",
+  basicAuth({
+    users: { shubh: "shubh" },
+    challenge: true,
+  }),
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec)
+);
 
 app.listen(port, () => {
   console.log(`Server is started at PORT: ${port}`);

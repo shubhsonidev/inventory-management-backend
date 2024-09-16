@@ -2,6 +2,8 @@
 
 This backend is created for inventory management it facilitates user, product and category management.
 
+Check out live backend server at [here](https://inventory-management-back.vercel.app/api/)
+
 ## User Management
 
 - POST /api/user/signup: Create a new user account.
